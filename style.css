@@ -56,6 +56,55 @@ input, textarea {
   border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); padding: 10px;
   background: rgba(255,255,255,0.05); color: var(--text);
 }
+/* --- Header & Logo Adjustments --- */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+}
+
+.logo img {
+  height: 60px;              /* Adjust this for logo size */
+  width: auto;               /* Keeps original proportions */
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);    /* Small hover zoom for a premium feel */
+}
+
+/* --- Navbar Styling --- */
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin-left: 22px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+nav a:hover {
+  color: var(--accent1);
+}
+
+/* --- Responsive Header --- */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .logo img {
+    height: 50px;
+  }
+
+  nav a {
+    margin: 0 10px;
+    display: inline-block;
+  }
+}
+
 @media (max-width: 640px) {
   .hero h1 { font-size: 2.2rem; }
 }
