@@ -60,7 +60,7 @@ header{
 
 /* Logo block - change height to adjust logo size */
 .logo img{
-  height: 56px;      /* <- ADJUST this value to scale logo (recommended 40-80) */
+  height: 150px;      /* <- ADJUST this value to scale logo (recommended 40-80) */
   width: auto;       /* preserves aspect ratio */
   display:block;
   object-fit:contain;
