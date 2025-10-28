@@ -1,0 +1,61 @@
+
+:root {
+  --bg: #0b1220;
+  --text: #f4f8ff;
+  --accent1: #00c9ff;
+  --accent2: #0078ff;
+  --muted: #aab4c0;
+  --gradient: linear-gradient(90deg, var(--accent1), var(--accent2));
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+}
+header, footer {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+header .container, footer .container {
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: 1100px; margin: 0 auto; padding: 16px;
+}
+nav a {
+  color: var(--text); text-decoration: none; margin-left: 18px; font-weight: 500;
+}
+nav a:hover { color: var(--accent1); }
+.container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+.hero {
+  text-align: center; padding: 100px 20px;
+  background: radial-gradient(circle at top left, rgba(0,121,255,0.3), transparent 70%);
+}
+.hero h1 { font-size: 3rem; margin-bottom: 16px; }
+.hero p { color: var(--muted); max-width: 640px; margin: 0 auto 24px; }
+.btn {
+  background: var(--gradient); color: white; border: none;
+  border-radius: 8px; padding: 12px 24px; cursor: pointer; text-decoration: none; font-weight: 600;
+}
+.btn:hover { opacity: 0.9; }
+.section {
+  padding: 60px 20px; text-align: center;
+}
+.section h2 { font-size: 2rem; margin-bottom: 20px; background: var(--gradient);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.services {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 30px;
+}
+.service {
+  background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+.service h3 { color: var(--accent1); }
+footer small { color: var(--muted); }
+form { display: grid; gap: 16px; max-width: 600px; margin: 0 auto; }
+input, textarea {
+  border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); padding: 10px;
+  background: rgba(255,255,255,0.05); color: var(--text);
+}
+@media (max-width: 640px) {
+  .hero h1 { font-size: 2.2rem; }
+}
