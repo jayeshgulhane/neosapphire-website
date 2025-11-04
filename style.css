@@ -1,218 +1,268 @@
-/* style.css - full file (replace your existing file) */
+/* =========================
+   style.css (Final Version)
+   ========================= */
 
 /* -------------------------
    Theme variables & reset
    ------------------------- */
-:root{
+:root {
   --bg: #0b1220;
   --text: #f4f8ff;
   --accent1: #00c9ff;
   --accent2: #0078ff;
   --muted: #aab4c0;
-  --gradient: linear-gradient(90deg,var(--accent1),var(--accent2));
+  --gradient: linear-gradient(90deg, var(--accent1), var(--accent2));
   --container-max: 1100px;
-  --header-height: 72px; /* used for spacing if needed */
-  font-family: "Inter","Segoe UI",sans-serif;
+  --header-height: 90px; /* increased header height for better logo fit */
+  font-family: "Inter", "Segoe UI", sans-serif;
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.5;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
 }
 
 /* -------------------------
-   Header / Footer container
+   Header & Footer
    ------------------------- */
-header, footer{
-  background: rgba(255,255,255,0.03);
+header, footer {
+  background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
-/* Sticky header */
-header{
+header {
   position: sticky;
   top: 0;
   z-index: 999;
 }
 
-/* shared container */
-.container{
+.container {
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
-/* header internal layout */
-.header-container{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   height: var(--header-height);
   gap: 16px;
 }
 
-/* Logo block - change height to adjust logo size */
-.logo img{
-  height: 150px;      /* <- ADJUST this value to scale logo (recommended 40-80) */
-  width: auto;       /* preserves aspect ratio */
-  display:block;
-  object-fit:contain;
-  transition: transform 200ms ease, filter 200ms ease;
+/* -------------------------
+   Logo styling
+   ------------------------- */
+.logo img {
+  height: 80px; /* logo size adjusted for better visibility */
+  width: auto;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* small hover microinteraction */
-.logo img:hover{ transform: scale(1.03); filter:brightness(1.05); }
-
-/* Navbar */
-nav{
-  display:flex;
-  align-items:center;
-  gap: 18px;
+.logo img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
 }
-
-nav a{
-  color:var(--text);
-  text-decoration:none;
-  margin-left: 6px;
-  font-weight:600;
-  letter-spacing:0.1px;
-  padding: 8px 10px;
-  border-radius:6px;
-  transition: background 150ms ease, color 150ms ease;
-  font-size: 1rem;
-}
-
-nav a:hover{ color:var(--accent1); background: rgba(255,255,255,0.02); }
-
-/* Footer nav */
-footer .container{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding: 14px 20px;
-}
-footer small{ color:var(--muted); }
 
 /* -------------------------
-   Hero section
+   Navigation styling
    ------------------------- */
-.hero{
-  text-align:center;
-  padding: 100px 20px 80px;
-  background: radial-gradient(circle at top left, rgba(0,121,255,0.08), transparent 45%);
+nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
 }
 
-.hero h1{
-  font-size: 3rem;
-  margin-bottom: 16px;
-  line-height:1.05;
-  letter-spacing: -0.02em;
-}
-
-.hero p{
-  color:var(--muted);
-  max-width: 720px;
-  margin: 0 auto 28px;
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  transition: color 0.2s ease, background 0.2s ease;
   font-size: 1.05rem;
 }
 
-/* CTA button */
-.btn{
-  display:inline-block;
-  background: var(--gradient);
-  color: #fff;
-  border:none;
-  border-radius: 10px;
-  padding: 12px 26px;
-  cursor:pointer;
-  text-decoration:none;
-  font-weight:700;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
-  transition: transform 150ms ease, opacity 150ms ease;
+nav a:hover {
+  color: var(--accent1);
+  background: rgba(255, 255, 255, 0.04);
 }
-.btn:hover{ transform: translateY(-2px); opacity:0.95; }
 
 /* -------------------------
-   Sections & cards
+   Hero Section
    ------------------------- */
-.section{
-  padding: 60px 20px;
-  text-align:center;
+.hero {
+  text-align: center;
+  padding: 120px 20px 80px;
+  background: radial-gradient(circle at top left, rgba(0, 121, 255, 0.08), transparent 45%);
 }
-.section h2{
-  font-size: 2rem;
+
+.hero h1 {
+  font-size: 3.2rem;
+  margin-bottom: 18px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.hero p {
+  color: var(--muted);
+  max-width: 720px;
+  margin: 0 auto 32px;
+  font-size: 1.1rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--gradient);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 28px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  transition: transform 150ms ease, opacity 150ms ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+/* -------------------------
+   Sections
+   ------------------------- */
+.section {
+  padding: 70px 20px;
+  text-align: center;
+}
+.section h2 {
+  font-size: 2.2rem;
   margin-bottom: 20px;
   background: var(--gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.services{
-  display:grid;
-  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-  gap:24px;
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 26px;
   margin-top: 30px;
 }
-.service{
-  background: rgba(255,255,255,0.04);
-  padding:18px;
-  border-radius:12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
-  text-align:left;
+.service {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  text-align: left;
 }
-.service h3{ color:var(--accent1); margin-bottom:8px; }
-.service p{ color:var(--muted); line-height:1.45; }
-
-/* Forms, inputs */
-form{ display:grid; gap:16px; max-width:600px; margin: 0 auto; }
-input, textarea{
-  border-radius:10px;
-  border: 1px solid rgba(255,255,255,0.06);
-  padding:10px;
-  background: rgba(255,255,255,0.03);
-  color: var(--text);
-  outline:none;
+.service h3 {
+  color: var(--accent1);
+  margin-bottom: 8px;
 }
-input:focus, textarea:focus{ box-shadow: 0 0 0 4px rgba(0,121,255,0.06); border-color: rgba(0,121,255,0.35); }
+.service p {
+  color: var(--muted);
+  line-height: 1.45;
+}
 
 /* -------------------------
-   Responsive / small screens
+   Forms
    ------------------------- */
-@media (max-width: 900px){
-  .hero{ padding: 80px 20px; }
-  .hero h1{ font-size: 2.4rem; }
-  .logo img{ height: 50px; }
+form {
+  display: grid;
+  gap: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+input, textarea {
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  outline: none;
+}
+input:focus, textarea:focus {
+  box-shadow: 0 0 0 4px rgba(0, 121, 255, 0.06);
+  border-color: rgba(0, 121, 255, 0.35);
 }
 
-@media (max-width: 640px){
-  .header-container{
-    flex-direction:column;
-    align-items:center;
-    gap:8px;
+/* -------------------------
+   Footer
+   ------------------------- */
+footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+}
+footer small {
+  color: var(--muted);
+}
+
+/* -------------------------
+   Responsive Adjustments
+   ------------------------- */
+@media (max-width: 900px) {
+  .hero {
+    padding: 90px 20px;
+  }
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+  .logo img {
+    height: 70px;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
     padding: 8px 0;
   }
-  nav{
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:10px;
+  nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
   }
-  nav a{ margin-left:0; padding:8px 12px; font-size:0.98rem; }
-  .logo img{ height:46px; }
-  .hero h1{ font-size:2rem; }
-  .hero{ padding: 60px 16px; }
+  nav a {
+    margin-left: 0;
+    padding: 8px 12px;
+    font-size: 1rem;
+  }
+  .logo img {
+    height: 65px;
+  }
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+  .hero {
+    padding: 60px 16px;
+  }
 }
 
 /* -------------------------
-   Utility helpers
+   Utilities
    ------------------------- */
-.hidden{ display:none !important; }
-.center{ text-align:center !important; }
-.muted{ color:var(--muted); }
+.hidden { display: none !important; }
+.center { text-align: center !important; }
+.muted { color: var(--muted); }
 
 /* End of file */
